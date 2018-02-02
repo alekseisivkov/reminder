@@ -44,6 +44,8 @@ private val lifecycleCompiler = "android.arch.lifecycle:compiler:$vLifecycle"
 
 private val dagger = "com.google.dagger:dagger:$vDagger"
 private val daggerCompiler = "com.google.dagger:dagger-compiler:$vDagger"
+private val daggerAndroid = "com.google.dagger:dagger-android-support:$vDagger"
+private val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:$vDagger"
 
 private val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$vKotlin"
 private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$vCoroutines"
@@ -71,6 +73,8 @@ appDeps.add(kapt, lifecycleCompiler)
 
 appDeps.add(impl, dagger)
 appDeps.add(kapt, daggerCompiler)
+appDeps.add(impl, daggerAndroid)
+appDeps.add(kapt, daggerAndroidCompiler)
 
 appDeps.add(impl, kotlin)
 appDeps.add(impl, coroutines)

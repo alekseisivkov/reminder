@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.sivkov.reminder.R
+import com.sivkov.reminder.di.scopes.PerActivity
+import javax.inject.Inject
 
-/**
- * Created by Aleksei_Sivkov on 01.02.2018.
- */
-class ReminderListAdapter(
-        private var data: List<ReminderModel> = emptyList()
-) : RecyclerView.Adapter<ReminderListAdapter.ViewHolder>() {
+
+@PerActivity
+class ReminderListAdapter
+@Inject constructor() : RecyclerView.Adapter<ReminderListAdapter.ViewHolder>() {
+
+    private var data: List<ReminderModel> = emptyList()
 
     init {
         setHasStableIds(true)

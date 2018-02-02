@@ -3,6 +3,7 @@ package com.sivkov.reminder.base
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import dagger.android.AndroidInjection
 
 abstract class BaseActivity<State : BaseState, ViewModel : BaseViewModel<State>> : AppCompatActivity() {
 
@@ -13,6 +14,7 @@ abstract class BaseActivity<State : BaseState, ViewModel : BaseViewModel<State>>
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         viewModel.data.observe(this, object : Observer<State> {
             override fun onChanged(t: State) {

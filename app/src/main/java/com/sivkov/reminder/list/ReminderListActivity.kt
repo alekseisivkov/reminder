@@ -7,12 +7,14 @@ import android.widget.Toast
 import com.sivkov.reminder.R
 import com.sivkov.reminder.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class ReminderListActivity : BaseActivity<ReminderListState, ReminderListViewModel>(), View.OnClickListener, ReminderListAdapter.Callback {
 
     override val vmClass = ReminderListViewModel::class.java
 
-    private val adapter = ReminderListAdapter()
+    @Inject
+    lateinit var adapter : ReminderListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
