@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "336242330700",
+    "firebase_url": "https://reminder-simple.firebaseio.com",
+    "project_id": "reminder-simple",
+    "storage_bucket": "reminder-simple.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336242330700:android:da5369183177bfd1",
+        "android_client_info": {
+          "package_name": "com.sivkov.reminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336242330700-bafrsp7j25lh701dsh3prkd69fcsdske.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYg0NHKSUA2Brbc26OZhuCHjwNm94pbMU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

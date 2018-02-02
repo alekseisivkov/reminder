@@ -51,3 +51,7 @@ repositories {
     jcenter()
     google()
 }
+
+apply {
+    plugin("com.google.gms.google-services")
+}
