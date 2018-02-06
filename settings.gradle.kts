@@ -14,4 +14,4 @@ pluginManagement {
 
 rootProject.buildFileName = "build.gradle.kts"
 
-include(":app", ":utils")
+include(":app", ":interactors", ":managers", ":entities", ":utils", ":tools")

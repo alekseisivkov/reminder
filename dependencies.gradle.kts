@@ -8,6 +8,19 @@ appDeps = ArrayList()
 var utilDeps: MutableList<Pair<String, Any>> by extra
 utilDeps = ArrayList()
 
+var toolsDeps: MutableList<Pair<String, Any>> by extra
+toolsDeps = ArrayList()
+
+var entitiesDeps: MutableList<Pair<String, Any>> by extra
+entitiesDeps = ArrayList()
+
+var interactorDeps: MutableList<Pair<String, Any>> by extra
+interactorDeps = ArrayList()
+
+var managersDeps: MutableList<Pair<String, Any>> by extra
+managersDeps = ArrayList()
+
+
 //global versions
 var vBuildTools: String by extra
 vBuildTools = "27.0.0"
@@ -21,7 +34,12 @@ val vKotlin: String by extra
 
 
 //modules
+private val app = ":app"
+private val managers = ":managers"
+private val interactors = ":interactors"
+private val entities = ":entities"
 private val utils = ":utils"
+private val tools = ":tools"
 
 // versions
 private val vPlayServices = "11.0.1"
@@ -66,7 +84,10 @@ private val kapt = "kapt"
 
 
 //app deps
-appDeps.add(impl, project("$utils"))
+appDeps.add(impl, project(interactors))
+appDeps.add(impl, project(entities))
+appDeps.add(impl, project(utils))
+appDeps.add(impl, project(tools))
 
 appDeps.add(impl, appCompat)
 appDeps.add(impl, design)
@@ -74,10 +95,6 @@ appDeps.add(impl, annotations)
 appDeps.add(impl, recyclerView)
 appDeps.add(impl, supportAndroid)
 appDeps.add(impl, constraintLayout)
-
-
-appDeps.add(impl, firebase)
-appDeps.add(impl, firestore)
 
 appDeps.add(impl, cicerone)
 
@@ -91,6 +108,42 @@ appDeps.add(kapt, daggerAndroidCompiler)
 
 appDeps.add(impl, kotlin)
 appDeps.add(impl, coroutines)
+
+
+//interactors deps
+interactorDeps.add(impl, project(entities))
+interactorDeps.add(impl, project(tools))
+
+interactorDeps.add(impl, kotlin)
+
+interactorDeps.add(impl, dagger)
+interactorDeps.add(kapt, daggerCompiler)
+
+
+//managers deps
+managersDeps.add(impl, project(interactors))
+managersDeps.add(impl, project(entities))
+managersDeps.add(impl, project(utils))
+managersDeps.add(impl, project(tools))
+managersDeps.add(impl, kotlin)
+
+managersDeps.add(impl, dagger)
+managersDeps.add(kapt, daggerCompiler)
+
+managersDeps.add(impl, firebase)
+managersDeps.add(impl, firestore)
+
+
+//entities deps
+entitiesDeps.add(impl, kotlin)
+
+
+//tools deps
+toolsDeps.add(impl, kotlin)
+
+
+//utils deps
+utilDeps.add(impl, kotlin)
 
 fun MutableList<Pair<String, Any>>.add(config: String, dep: Any) {
     add(Pair(config, dep))
