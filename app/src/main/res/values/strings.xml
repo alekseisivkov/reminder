@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Simple Reminder</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+
+    <!-- addition screen -->
+    <string name="hint_message">Enter reminder note</string>
+    <string name="button_save">Save</string>
 </resources>

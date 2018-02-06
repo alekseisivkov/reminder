@@ -2,8 +2,11 @@ import javafx.util.Pair
 import org.gradle.kotlin.dsl.*
 import java.util.*
 
-var appDeps: MutableList<Pair<String, String>> by extra
+var appDeps: MutableList<Pair<String, Any>> by extra
 appDeps = ArrayList()
+
+var utilDeps: MutableList<Pair<String, Any>> by extra
+utilDeps = ArrayList()
 
 //global versions
 var vBuildTools: String by extra
@@ -16,6 +19,9 @@ var vTargetSdk: Int by extra
 vTargetSdk = 27
 val vKotlin: String by extra
 
+
+//modules
+private val utils = ":utils"
 
 // versions
 private val vPlayServices = "11.0.1"
@@ -60,6 +66,8 @@ private val kapt = "kapt"
 
 
 //app deps
+appDeps.add(impl, project("$utils"))
+
 appDeps.add(impl, appCompat)
 appDeps.add(impl, design)
 appDeps.add(impl, annotations)
@@ -84,6 +92,6 @@ appDeps.add(kapt, daggerAndroidCompiler)
 appDeps.add(impl, kotlin)
 appDeps.add(impl, coroutines)
 
-fun MutableList<Pair<String, String>>.add(config: String, dep: String) {
+fun MutableList<Pair<String, Any>>.add(config: String, dep: Any) {
     add(Pair(config, dep))
 }
