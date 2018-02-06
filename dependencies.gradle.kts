@@ -26,6 +26,7 @@ private val vConstraint = "1.0.2"
 private val vLifecycle = "1.1.0"
 private val vCoroutines = "0.21"
 private val vFirebase = "11.8.0"
+private val vCicerone = "3.0.0"
 
 
 //libs
@@ -38,6 +39,8 @@ private val constraintLayout = "com.android.support.constraint:constraint-layout
 
 private val firebase = "com.google.firebase:firebase-core:$vFirebase"
 private val firestore = "com.google.firebase:firebase-firestore:$vFirebase"
+
+private val cicerone = "ru.terrakok.cicerone:cicerone:$vCicerone"
 
 private val lifecycle = "android.arch.lifecycle:extensions:$vLifecycle"
 private val lifecycleCompiler = "android.arch.lifecycle:compiler:$vLifecycle"
@@ -67,6 +70,8 @@ appDeps.add(impl, constraintLayout)
 
 appDeps.add(impl, firebase)
 appDeps.add(impl, firestore)
+
+appDeps.add(impl, cicerone)
 
 appDeps.add(impl, lifecycle)
 appDeps.add(kapt, lifecycleCompiler)
