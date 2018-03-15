@@ -1,9 +1,10 @@
 package com.sivkov.reminder.managers
 
-import com.sivkov.reminder.interactors.managers.StorageManager
+import com.sivkov.reminder.interactors.manager.StorageManager
+import javax.inject.Inject
+import javax.inject.Singleton
 
-/**
- * Created by Aleksei_Sivkov on 06.02.2018.
- */
-class FirebaseStorageManager : StorageManager {
+
+@Singleton
+class FirebaseStorageManager @Inject constructor() : StorageManager {
 }

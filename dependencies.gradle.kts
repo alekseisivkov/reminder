@@ -51,6 +51,7 @@ private val vLifecycle = "1.1.0"
 private val vCoroutines = "0.21"
 private val vFirebase = "11.8.0"
 private val vCicerone = "3.0.0"
+private val vJodaTime = "2.9.9.2"
 
 
 //libs
@@ -66,6 +67,8 @@ private val firestore = "com.google.firebase:firebase-firestore:$vFirebase"
 
 private val cicerone = "ru.terrakok.cicerone:cicerone:$vCicerone"
 
+private val jodaTime = "net.danlew:android.joda:$vJodaTime"
+
 private val lifecycle = "android.arch.lifecycle:extensions:$vLifecycle"
 private val lifecycleCompiler = "android.arch.lifecycle:compiler:$vLifecycle"
 
@@ -75,7 +78,8 @@ private val daggerAndroid = "com.google.dagger:dagger-android-support:$vDagger"
 private val daggerAndroidCompiler = "com.google.dagger:dagger-android-processor:$vDagger"
 
 private val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$vKotlin"
-private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$vCoroutines"
+private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$vCoroutines"
+private val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$vCoroutines"
 
 
 //configuration
@@ -85,6 +89,7 @@ private val kapt = "kapt"
 
 //app deps
 appDeps.add(impl, project(interactors))
+appDeps.add(impl, project(managers))
 appDeps.add(impl, project(entities))
 appDeps.add(impl, project(utils))
 appDeps.add(impl, project(tools))
@@ -98,6 +103,10 @@ appDeps.add(impl, constraintLayout)
 
 appDeps.add(impl, cicerone)
 
+appDeps.add(impl, jodaTime)
+
+appDeps.add(impl, firebase)
+
 appDeps.add(impl, lifecycle)
 appDeps.add(kapt, lifecycleCompiler)
 
@@ -107,7 +116,7 @@ appDeps.add(impl, daggerAndroid)
 appDeps.add(kapt, daggerAndroidCompiler)
 
 appDeps.add(impl, kotlin)
-appDeps.add(impl, coroutines)
+appDeps.add(impl, coroutinesAndroid)
 
 
 //interactors deps
@@ -115,6 +124,9 @@ interactorDeps.add(impl, project(entities))
 interactorDeps.add(impl, project(tools))
 
 interactorDeps.add(impl, kotlin)
+interactorDeps.add(impl, coroutines)
+
+interactorDeps.add(impl, jodaTime)
 
 interactorDeps.add(impl, dagger)
 interactorDeps.add(kapt, daggerCompiler)

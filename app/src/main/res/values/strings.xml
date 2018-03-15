@@ -3,6 +3,10 @@
 
 
     <!-- addition screen -->
+    <string name="activity_addition_screen">Create new reminder</string>
     <string name="hint_message">Enter reminder note</string>
     <string name="button_save">Save</string>
+
+    <!-- alert screen -->
+    <string name="activity_alert_title">Reminder</string>
 </resources>

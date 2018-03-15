@@ -1,9 +1,7 @@
-package com.sivkov.reminder.base.logger
+package com.sivkov.reminder.tools
 
-import javax.inject.Singleton
 import kotlin.reflect.KClass
 
-@Singleton
 interface Logger {
 
     val defaultTag: String

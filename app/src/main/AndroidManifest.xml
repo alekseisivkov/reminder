@@ -22,7 +22,17 @@
 
         <activity
             android:name=".addition.ReminderAddActivity"
-            android:label="Addition"/>
+            android:label="@string/activity_addition_screen"/>
+
+        <activity
+            android:name=".ReminderAlertActivity"
+            android:label="@string/activity_alert_title"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="com.sivkov.reminder.intent.ACTION_REMINDER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
